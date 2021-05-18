@@ -1,13 +1,18 @@
 ---
+layout: post
+title:  "ADAM optmizer"
+date:   2021-05-16 21:49:11 -0400
+categories: ML general 
+permalink: /:categories/:title:output_ext
 uselatex: true
 ---
 ## tl;dr
-ADAM is an extension of SGD, where the **effective** learning rate changes through time, and it's a function of the $$1^{st}$$ and $$2^{nd}$$ moments of the gradient. Recommended default settings:
+ADAM is an extension of SGD, where the **effective** learning rate changes over the training. In fact, the learning rate is a function of the $$1^{st}$$ and $$2^{nd}$$ moments of the gradient. Recommended default settings:
 
 $$\alpha = 0.001$$, $$\beta_1 = 0.9$$, $$\beta_2 = 0.999$$, $$\epsilon = 10^{-8}$$
 
 ## ADAM (ADAptive Moment estimation)
-ADAM is an extension of the SGD (stochastic gradient descent) and it stands for **Adaptive Moment Estimation**. It was introduced in [this][kingma-ba-2015] paper (by Kingma & Ba)
+ADAM is an extension of the SGD (stochastic gradient descent) and it stands for **Adaptive Moment Estimation**. It was introduced in [this][kingma-ba-2015] paper (by Kingma & Ba).
 
 Benefits:
 
@@ -24,13 +29,20 @@ In SGD, there is a single learning rate for all weights update; this learning do
 
 > The method computes individual adaptive learning rates for different parameters from **estimates of first and second moments of the gradients**.
 
-The algorithm is as follows:
+Before we see the ADAM algorithm, here is the typical gradient descent update formula (for comparison):
+
+$$ \theta_t \leftarrow \theta_{t-1} - \gamma \nabla_{\theta} f_t(\theta_{t-1})$$
+
+where:
+
+- $$f_t$$ is the objective function
+- $$g_t = \nabla_\theta f_t(\theta)$$  is the vector of partial derivatives of $$f_t$$ w.r.t $$\theta$$ evaluated at timestep $$t$$.
+
+In ADAM, the update formula is slightly different. The ADAM algorithm is as follows:
 
 ![ADAM algorithm]({{ 'assets/images/adam_algo.png' | relative_url }})
 
-*Fig 1. ADAM algorithmon (Image source: [Kingma, Ba (2015)](https://arxiv.org/pdf/1412.6980.pdf))
-
-where $$g_t = \nabla_\theta f_t(\theta)$$  is the vector of partial derivatives of $$f_t$$, the objective function, w.r.t $$\theta$$ evaluated at timestep $$t$$.
+*Fig 1. ADAM algorithmn (Image source: [Kingma, Ba (2015)](https://arxiv.org/pdf/1412.6980.pdf))*
 
 Let's take a quick look at $$m_t$$ (biased first moment estimate):
 
@@ -62,3 +74,8 @@ Let's take a quick look at $$\epsilon$$: well, there is not much to say , it exi
 | $$\epsilon$$ | $$10^{-8}$$   |
 
 [kingma-ba-2015]: https://arxiv.org/pdf/1412.6980.pdf 
+
+## ADADELTA (bonus)
+Borrowing from the terminology/notation used for ADAM optimizer above. [Adadelta](https://arxiv.org/pdf/1212.5701.pdf) is simply:
+
+$$\theta_t \leftarrow \theta_{t-1} - \alpha g_t / (\sqrt{\hat{v}_t} + \epsilon)$$
