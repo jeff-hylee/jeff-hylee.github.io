@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Probability Plot"
+title:  "Probability plot"
 date:   2021-05-17 23:44:00 -0400
 categories: data
 permalink: /:categories/:title:output_ext
 uselatex: true
 ---
-Before diving into probability and quantile plots, we need to know about the concept of **empirical quantiles**. Empirical quantiles are similar to percentiles for a given data set. This is easier understood by looking an example:
+Before diving into probability and quantile plots, we need to know about the concept of **empirical quantiles**. Empirical quantiles are similar to percentiles for a given data set. This is easier understood by looking at an example:
 
  Given a data set of $$n = 5$$, we first sort the data set and then estimate their (sorted) empirical quantiles as 0.2, 0.4, 0.6, 0.8, and 1.0 ($$p_i = i/n$$). Alternatively, we could have used a slighty different formula for $$p_i$$:
 
