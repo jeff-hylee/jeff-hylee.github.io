@@ -28,6 +28,8 @@ If the distribution of observed matches the theoretical distribution, then the r
 Here is a simplified python implementation of the above:
 
 ```python
+from scipy import stats 
+
 #1. Sort values
 data = data.sort_values()
 #2. Compute empirical quantiles
