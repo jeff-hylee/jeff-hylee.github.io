@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ADAM optmizer"
+title:  "ADAM optimizer"
 date:   2021-05-16 21:49:11 -0400
 categories: ML general 
 permalink: /:categories/:title:output_ext
@@ -42,7 +42,7 @@ In ADAM, the update formula is slightly different. The ADAM algorithm is as foll
 
 ![ADAM algorithm]({{ 'assets/images/adam_algo.png' | relative_url }})
 
-*Fig 1. ADAM algorithmn (Image source: [Kingma, Ba (2015)](https://arxiv.org/pdf/1412.6980.pdf))*
+*Fig 1. ADAM algorithm (Image source: [Kingma, Ba (2015)](https://arxiv.org/pdf/1412.6980.pdf))*
 
 Let's take a quick look at $$m_t$$ (biased first moment estimate):
 

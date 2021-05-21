@@ -14,7 +14,7 @@ This is a continuation of the previous entry about the difference between SARSA 
 For the environment, we use [gym](https://gym.openai.com/) from OpenAI. Basically, it allows us to instantiate an object that abstract the environment. 
 
 ```python
-env =env = gym.make('CliffWalking-v0')
+env = gym.make('CliffWalking-v0')
 ```
 
 ![Cliff walking]({{ 'assets/images/cliff_walking_grid.png' | relative_url }})
@@ -23,7 +23,7 @@ env =env = gym.make('CliffWalking-v0')
 
 Here, we only really need to know about 2 methods:
  - `reset()`: resets the environment (to its initial state)
- - `step(action)`: performs transition of `env` as if agent took action `action`. It returns a tuple with the 1. next state, 2. reward, 3. done (terminal state reached?), 4. info; we will only use the first 3, info is auxiliary diagnostic informatoin.
+ - `step(action)`: performs transition of `env` as if agent took action `action`. It returns a tuple with the 1. next state, 2. reward, 3. done (terminal state reached?), 4. info; we will only use the first 3, info is auxiliary diagnostic information.
 
 ```python
 # Reset env back to state: 'S'
