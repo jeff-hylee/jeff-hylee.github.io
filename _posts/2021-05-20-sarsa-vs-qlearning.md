@@ -49,4 +49,4 @@ Q-learning ends up with a short path because it’s learning a policy that does 
 
 *Fig 3. Cliff walking: SARSA vs Q-learning. Image source: [Sutton & Barto (2018)](http://incompleteideas.net/book/the-book-2nd.html)*
 
-As a last word, if you are interesting with seeing these algorithms in the flesh, [my next entry/post](/ml/rl/cliff-walking-impl-sarsa-vs-qlearning.html) has a google colab jupyter implementation for both!
+As a last word, if you are interested in seeing these algorithms in the flesh, [my next entry/post](/ml/rl/cliff-walking-impl-sarsa-vs-qlearning.html) has a google colab jupyter implementation for both!
