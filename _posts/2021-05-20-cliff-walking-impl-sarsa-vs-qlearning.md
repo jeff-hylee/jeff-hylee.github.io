@@ -11,7 +11,7 @@ uselatex: true
 This is a continuation of the previous entry about the difference between SARSA and Q-Learning ([here](/ml/rl/sarsa-vs-qlearning.html)). It's a simple python implementation of these 2 algorithms for the cliff walking example.
 
 ### The environment
-For the environment, we use [gym](https://gym.openai.com/) from OpenAI. Basically, it allows us to instantiate an object that abstract the environment. 
+For the environment, we use [gym](https://gym.openai.com/) from OpenAI. Basically, it allows us to instantiate an object that abstracts the environment. 
 
 ```python
 env = gym.make('CliffWalking-v0')
@@ -69,7 +69,7 @@ def e_greedyfy(policy, epsilon, n_actions):
 ### (Finally) SARSA/Q-learning
 Finally, we implement SARSA and Q-learning. Here is a rough sketch of what happens for each *step* iteration (inside a rollout/episode):
 1. Take action $$A$$, observe $$R$$ and $$S'$$
-2. Select next action $$S'$$ ($$\epsilon$$-greedy policy) 
+2. Select next action $$A'$$ ($$\epsilon$$-greedy policy) 
 3. Q-value (policy) update
 4. Setup for next step, if state not terminal
 
@@ -85,7 +85,7 @@ for episode in range(num_episodes):
     for step in itertools.count():
         # Take action A, observe R, S'
         next_state, reward, done, _ = env.step(action)
-        # Select next action - S'
+        # Select next action - A'
         next_action = e_greedy_policy(next_state)
         # Q-value/policy update
         q_target = reward + gamma * Q[next_state][next_action]
