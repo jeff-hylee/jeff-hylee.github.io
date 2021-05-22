@@ -91,5 +91,4 @@ When calculating `backward()`, we need to find the partial derivative of `f` wrt
 
 $$ \frac{\partial f}{\partial a} \approx \frac{f(a+\epsilon)-f(a)}{\epsilon} $$ 
 
-
 ---
