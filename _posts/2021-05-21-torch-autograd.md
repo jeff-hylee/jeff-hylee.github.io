@@ -35,7 +35,7 @@ This means:
 
 ## Implementing the function $$f(a,b) = a * b$$ in PyTorch.
 
-In PyTorch, at the most basic level, if we want to implement the custom function $$f$$, we need to write at least 2 methods:
+In PyTorch, at the most basic level, if we want to implement the custom function $$f$$, we need to create a new class derived from `torch.autograd.Function` and write our own version of, at least, the following 2 methods:
 
 - `forward(ctx, *args, **kwargs)`: calculates the result of applying $$f$$ to inputs ($$a * b$$)
 - `backward(ctx, *grad_outputs)`: calculates partial derivatives w.r.t. inputs of $$f$$ (in this case $$\frac{\partial J}{\partial a}$$ and $$\frac{\partial J}{\partial b}$$, where $$J$$ is the whole expression - most of the time, it's the cost function)
