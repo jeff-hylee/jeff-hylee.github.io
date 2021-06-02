@@ -11,6 +11,6 @@ Notebooks, notebooks, jupyter notebooks!
 - [Tensorboard tutorial](https://colab.research.google.com/drive/1t6CdwOV-7_jIUtsw2F6EEjfCQL9bH4iE?usp=sharing): quick-start tensorboard tutorial using pytorch's `SummaryWriter` ([original post](/ml/general/tensorboard-tutorial.html))
 
 **Other Notebooks:**
-- [CNN MNIST](to-be-linked!!): TO-BE-LINKED implementation of CNN for MNIST:
-  - with tensorboard analysis (loss/accuracy over epochs and histogram of errors over classes)
+- [CNN MNIST](https://colab.research.google.com/drive/1sYePXFP-wB8zrM__m-S3MsZA5lUVwMsq?usp=sharing): implementation of CNN for MNIST
+  - with tensorboard: model graph, and loss/accuracy over epochs
   - misclassification analysis (animation using matplotlib) 
